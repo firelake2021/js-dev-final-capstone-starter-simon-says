@@ -33,27 +33,33 @@ let playerLevel = 1; // track the levels that player completed
  *
  */
 // TODO: Add the objects for the green, blue, and yellow pads. Use object for the red pad above as an example.
-
+var playYellow = new Audio("../assets/simon-says-sound-4.mp3");
 const pads = [
   {
     color: "red",
     selector: document.querySelector(".js-pad-red"),
-    sound: new Audio("../assets/simon-says-sound-1.mp3"),
+    sound: new Audio(
+      "https://github.com/firelake2021/js-dev-final-capstone-starter-simon-says/blob/main/assets/simon-says-sound-1.mp3"
+    ),
   },
   {
     color: "green",
     selector: document.querySelector(".js-pad-green"),
-    sound: new Audio("../assets/simon-says-sound-2.mp3"),
+    sound: new Audio(
+      "https://github.com/firelake2021/js-dev-final-capstone-starter-simon-says/blob/main/assets/simon-says-sound-2.mp3"
+    ),
   },
   {
     color: "blue",
     selector: document.querySelector(".js-pad-blue"),
-    sound: new Audio("../assets/simon-says-sound-3.mp3"),
+    sound: new Audio(
+      "https://github.com/firelake2021/js-dev-final-capstone-starter-simon-says/blob/main/assets/simon-says-sound-3.mp3"
+    ),
   },
   {
     color: "yellow",
     selector: document.querySelector(".js-pad-yellow"),
-    sound: new Audio("../assets/simon-says-sound-4.mp3"),
+    sound: playYellow,
   },
 ];
 
