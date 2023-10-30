@@ -1,8 +1,6 @@
 /**
  * DOM SELECTORS
  */
-const sound = "../assets/simon-says-sound-2.mp3";
-const audio = new Audio(sound);
 
 const startButton = document.querySelector(".js-start-button");
 // TODO: Add the missing query selectors:
@@ -35,33 +33,27 @@ let playerLevel = 1; // track the levels that player completed
  *
  */
 // TODO: Add the objects for the green, blue, and yellow pads. Use object for the red pad above as an example.
-var playYellow = new Audio("../assets/simon-says-sound-4.mp3");
+
 const pads = [
   {
     color: "red",
     selector: document.querySelector(".js-pad-red"),
-    sound: new Audio(
-      "https://github.com/firelake2021/js-dev-final-capstone-starter-simon-says/blob/main/assets/simon-says-sound-1.mp3"
-    ),
+    sound: new Audio("./assets/simon-says-sound-1.mp3"),
   },
   {
     color: "green",
     selector: document.querySelector(".js-pad-green"),
-    sound: new Audio(
-      "https://github.com/firelake2021/js-dev-final-capstone-starter-simon-says/blob/main/assets/simon-says-sound-2.mp3"
-    ),
+    sound: new Audio("./assets/simon-says-sound-2.mp3"),
   },
   {
     color: "blue",
     selector: document.querySelector(".js-pad-blue"),
-    sound: new Audio(
-      "https://github.com/firelake2021/js-dev-final-capstone-starter-simon-says/blob/main/assets/simon-says-sound-3.mp3"
-    ),
+    sound: new Audio("./assets/simon-says-sound-3.mp3"),
   },
   {
     color: "yellow",
     selector: document.querySelector(".js-pad-yellow"),
-    sound: playYellow,
+    sound: new Audio("./assets/simon-says-sound-4.mp3"),
   },
 ];
 
@@ -223,8 +215,7 @@ function activatePad(color) {
   const tempColor = color.toString().trim();
   const pad = pads.find((x) => x.color === tempColor);
   pad.selector.classList.add("activated");
-  audio.play();
-  // pad.sound.play();
+  pad.sound.play();
   setTimeout(function () {
     pad.selector.classList.remove("activated");
   }, 500);
