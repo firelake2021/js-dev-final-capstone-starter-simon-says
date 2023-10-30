@@ -1,6 +1,8 @@
 /**
  * DOM SELECTORS
  */
+const sound = "../assets/simon-says-sound-2.mp3";
+const audio = new Audio(sound);
 
 const startButton = document.querySelector(".js-start-button");
 // TODO: Add the missing query selectors:
@@ -221,7 +223,8 @@ function activatePad(color) {
   const tempColor = color.toString().trim();
   const pad = pads.find((x) => x.color === tempColor);
   pad.selector.classList.add("activated");
-  pad.sound.play();
+  audio.play();
+  // pad.sound.play();
   setTimeout(function () {
     pad.selector.classList.remove("activated");
   }, 500);
